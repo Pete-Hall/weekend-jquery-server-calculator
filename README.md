@@ -20,9 +20,9 @@ Tasks
 - [x] require express stuff to spin up server
 - [x] create static html home page on server
 - [x] create interface on html
-- [ ] set up JQ/client.js click handlers 
-- [ ] create functions with GET/POST + appending things to the DOM
 - [ ] create router on math.js
+- [ ] set up JQ/client.js click handlers 
+- [ ] create functions with GET/POST + appending things to the DOM (each operator sends to a different route?)
 - [ ] Math logic on server side (in math.js)
 - [ ] Set up req.body new stuff
 
