@@ -17,11 +17,12 @@ Tasks
 - [x] npm install express
 - [x] set up folders and files: server, public, modules (math folder, math.js like pets module in ajaxIntro) etc
 - [x] source everything in (html, JS, JQ)
-- [ ] require express stuff to spin up server
-- [ ] interface on html
-- [ ] JQ/client.js click handlers 
-- [ ] Create functions with GET/POST + appending things to the DOM
-- [ ] Creater router on math.js
+- [x] require express stuff to spin up server
+- [x] create static html home page on server
+- [x] create interface on html
+- [ ] set up JQ/client.js click handlers 
+- [ ] create functions with GET/POST + appending things to the DOM
+- [ ] create router on math.js
 - [ ] Math logic on server side (in math.js)
 - [ ] Set up req.body new stuff
 

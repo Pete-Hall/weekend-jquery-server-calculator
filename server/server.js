@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 // app uses
+app.use(express.static('./server/public'));
 
 // globals
 const port = 5001;
