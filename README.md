@@ -13,15 +13,15 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 Tasks
 ---
 
-- [] npm init --y
-- [] npm install express
-- [] set up server, public, modules (math.js) etc folders
-- [] source everything in (html, JS, JQ, css)
-- [] require express stuff to spin up server
-- [] interface on html
-- [] JQ/client.js click handlers 
-- [] Create functions with GET/POST + appending things to the DOM
-- [] Creater router on math.js
-- [] Math logic on server side (in math.js)
-- [] Set up req.body new stuff
+- [x] npm init --y
+- [x] npm install express
+- [x] set up folders and files: server, public, modules (math folder, math.js like pets module in ajaxIntro) etc
+- [x] source everything in (html, JS, JQ)
+- [ ] require express stuff to spin up server
+- [ ] interface on html
+- [ ] JQ/client.js click handlers 
+- [ ] Create functions with GET/POST + appending things to the DOM
+- [ ] Creater router on math.js
+- [ ] Math logic on server side (in math.js)
+- [ ] Set up req.body new stuff
 
