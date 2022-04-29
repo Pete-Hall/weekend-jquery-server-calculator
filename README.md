@@ -20,7 +20,11 @@ Tasks
 - [x] require express stuff to spin up server
 - [x] create static html home page on server
 - [x] create interface on html
-- [ ] create router on math.js
+- [x] create router on math.js
+- Add new equation functionality: (can we input some values, send it to the server, and display it on the DOM? don't worry abot math logic yet)
+- [ ] send input values to server (index.html --> client.js --> server.js --> math.js)
+- [ ] send data from server to display on the DOM
+
 - [ ] set up JQ/client.js click handlers 
 - [ ] create functions with GET/POST + appending things to the DOM (each operator sends to a different route?)
 - [ ] Math logic on server side (in math.js)
