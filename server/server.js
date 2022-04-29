@@ -1,10 +1,12 @@
 // requires
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const math = require('./modules/math/math');
 
 // app uses
 app.use(express.static('./server/public'));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/math', math);
 
 // globals

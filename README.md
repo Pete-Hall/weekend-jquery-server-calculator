@@ -21,8 +21,8 @@ Tasks
 - [x] create static html home page on server
 - [x] create interface on html
 - [x] create router on math.js
-- Add new equation functionality: (can we input some values, send it to the server, and display it on the DOM? don't worry abot math logic yet)
-- [ ] send input values to server (index.html --> client.js --> server.js --> math.js)
+- Add new equation functionality: (can we input some values, send it to the server, and display it on the DOM? don't worry abot math logic yet):
+- [x] send input values to server (index.html --> client.js --> server.js --> math.js), pushing new equation object to the equations array
 - [ ] send data from server to display on the DOM
 
 - [ ] set up JQ/client.js click handlers 

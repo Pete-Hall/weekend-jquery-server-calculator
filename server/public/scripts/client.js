@@ -19,6 +19,17 @@ function equals() { // When the submit (`=` button) is clicked, capture this inp
   //equations.push(newEquation); // for testing the object creation
   console.log('adding:', newEquation);
   // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
+  $.ajax({
+    method: 'POST',
+    url: '/math', // not sure if this is right or if it needs to be '/'
+    data: newEquation
+  }).then(function(response){
+    console.log('back from POST', response);
+    // update DOM
+  }).catch(function(err){
+    console.log(err);
+    alert('error adding equation');
+  })
 }
 
 function operatorChoose() { // updates the chosenOperator for the current equation
