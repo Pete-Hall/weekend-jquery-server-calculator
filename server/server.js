@@ -8,7 +8,6 @@ const math = require('./modules/math/math');
 app.use(express.static('./server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/math', math);
-app.use('/answer', math);
 
 // globals
 const port = 5001;

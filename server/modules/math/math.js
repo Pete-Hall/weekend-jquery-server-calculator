@@ -12,36 +12,37 @@ let test = '';
 //   lastNum: $('#secondNumIn').val()
 // }
 
-
-/* for(let i = 0; i < equations.length; i++) {
-  // change to appropriate data types
-  test = equations[i].firstNum; // why can't I loop thru the array and re-value the test global variable??
-  let numberFirstNum = +equations[i].firstNum;
-  let numberLastNum = +equations[i].lastNum;
-  // conditional statement based on operator (but I'm not converting the operator to use it, I just need to know which one to use in this statement)
-  // +, -, *, /
-  //answer = numberFirstNum + numberLastNum;
-}
-
-//answer = answer.toString();
-
-//answer = 2+2; // this works in changing the value of answer and sending it with GET */
-
+// http://localhost:5001/math
 router.get('/', (req, res)=>{ // sends the equation array to the DOM
   console.log('/math GET');
   res.send(equations);
 })
 
-// set up router with /answer // http://localhost:5001/answer routes to /math /math/answer routes to answer - worry about this later
-router.get('/answer', (req, res)=>{
+// http://localhost:5001/math/answer
+router.get('/answer', (req, res)=>{ // performs math logic and sends the answer to the DOM
   console.log('/answer GET');
-  for(let i = 0; i < equations.length; i++) {
+  for(let i = 0; i < equations.length; i++) { // why does this logic need to be in the router.get function??
     if(equations[i].operator === "+") {
       answer = (+equations[i].firstNum) + (+equations[i].lastNum);
       answer = answer.toString();
     }
+    else if(equations[i].operator === "-") {
+      answer = (+equations[i].firstNum) - (+equations[i].lastNum);
+      answer = answer.toString();
+    }
+    else if(equations[i].operator === "*") {
+      answer = (+equations[i].firstNum) * (+equations[i].lastNum);
+      answer = answer.toString();
+    }
+    else if(equations[i].operator === "/") {
+      answer = (+equations[i].firstNum) / (+equations[i].lastNum);
+      answer = answer.toString();
+    }
+    else {
+      answer = 'math went wrong';
+    }
   }
-  res.send(answer); // this sends back the operator of the first object in the array (so we know we can find this info after the POST)
+  res.send(answer);
 })
 
 router.post('/', (req, res)=>{ // adds a new equation to the equations array
