@@ -17,6 +17,8 @@ function equals() { // When the submit (`=` button) is clicked, capture this inp
     lastNum: $('#secondNumIn').val()
   }
   //equations.push(newEquation); // for testing the object creation
+  console.log('adding:', newEquation);
+  // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
 }
 
 function operatorChoose() { // updates the chosenOperator for the current equation
