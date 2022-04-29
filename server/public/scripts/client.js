@@ -1,8 +1,6 @@
-// const res = require("express/lib/response");
-
 $(document).ready(onReady);
 
-//let equations = []; // for testing the object creation
+//let dataTypeTest = []; // for TESTING how to convert the operator from a string to the arithmetic version
 let chosenOperator = 0; // I wonder if this global variable will be a problem
 
 function onReady() {
@@ -10,7 +8,24 @@ function onReady() {
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
 }
 
-function getEquations() {
+function getAnswer() {
+  console.log('in getAnswer');
+  // use AJAX to make a GET request to retrieve the answer from the most recent inputted equation and display on the DOM
+  $.ajax({
+    method: 'GET',
+    url: '/math/answer' //trying /answer instead of /math (will likely need to create /answer?)
+  }).then(function(response){
+    console.log(response);
+    let el = $('#answerOut');
+    el.empty();
+    el.append(response);
+  }).catch(function(err){
+    console.log(err);
+    alert('error getting answer');
+  })
+}
+
+function getEquations() { // creates a GET request in order to display all inputted equations onto the DOM
   console.log('in getEquations');
   // use AJAX to make a GET request to retrieve the equations array in math.js and display it on the DOM
   $.ajax({
@@ -37,7 +52,7 @@ function equals() { // When the submit (`=` button) is clicked, capture this inp
     operator: chosenOperator,
     lastNum: $('#secondNumIn').val()
   }
-  //equations.push(newEquation); // for testing the object creation
+  //dataTypeTest.push(newEquation); // for TESTING the data type of the object
   console.log('adding:', newEquation);
   // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
   $.ajax({
@@ -46,8 +61,10 @@ function equals() { // When the submit (`=` button) is clicked, capture this inp
     data: newEquation
   }).then(function(response){
     console.log('back from POST', response);
-    // update DOM
+    // update equation history on DOM
     getEquations();
+    // upadate current answer on DOM
+    getAnswer();
   }).catch(function(err){
     console.log(err);
     alert('error adding equation');
@@ -60,3 +77,13 @@ function operatorChoose() { // updates the chosenOperator for the current equati
   chosenOperator = $(this).text();
   //console.log(chosenOperator);
 }
+
+// function dataType() {
+//   for(let i = 0; i < dataTypeTest.length; i++) {
+//     let firstNumber = +dataTypeTest[i].firstNum;
+//     let secondNumber = +dataTypeTest[i].lastNum;
+//     console.log(firstNumber, secondNumber);
+//     let operatorType = dataTypeTest[i].operator;
+//     console.log(firstNumber, operatorType, secondNumber); // returns the operator as string = boo!!
+//   };
+// }
