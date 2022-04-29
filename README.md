@@ -22,11 +22,13 @@ Tasks
 - [x] create interface on html
 - [x] create router on math.js
 - Add new equation functionality: (can we input some values, send it to the server, and display it on the DOM? don't worry abot math logic yet):
-- [x] send input values to server (index.html --> client.js --> server.js --> math.js), pushing new equation object to the equations array
-- [ ] send data from server to display on the DOM
+- [x] send input values to server (index.html --> client.js --> server.js --> math.js), pushing new equation object to the equations array using a POST
+- [ ] send equations from server to display on the DOM using a GET request
+- [ ] set up math logic on server side
+- [ ] display the answer on the DOM (span for answer in equations history?)
+- [ ] set up C button functionality
 
 - [ ] set up JQ/client.js click handlers 
 - [ ] create functions with GET/POST + appending things to the DOM (each operator sends to a different route?)
-- [ ] Math logic on server side (in math.js)
-- [ ] Set up req.body new stuff
+- [ ] if feeling spicy, have each operator be it's own route?
 
