@@ -10,6 +10,10 @@ router.post('/', (req, res)=>{
   res.sendStatus(200);
 })
 
+router.get('/', (req, res)=>{
+  console.log('/math2 GET');
+  res.send(equations2);
+})
 
 // exports
 module.exports = router;
