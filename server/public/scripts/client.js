@@ -1,7 +1,6 @@
 $(document).ready(onReady);
 
-//let dataTypeTest = []; // for TESTING how to convert the operator from a string to the arithmetic version
-let chosenOperator = 0; // I wonder if this global variable will be a problem
+let chosenOperator = 0;
 
 function onReady() {
   $('#equalsButton').on('click', equals);
@@ -13,7 +12,7 @@ function getAnswer() {
   // use AJAX to make a GET request to retrieve the answer from the most recent inputted equation and display on the DOM
   $.ajax({
     method: 'GET',
-    url: '/math/answer' //trying /answer instead of /math (will likely need to create /answer?)
+    url: '/math/answer'
   }).then(function(response){
     console.log(response);
     let el = $('#answerOut');
@@ -36,7 +35,7 @@ function getEquations() { // creates a GET request in order to display all input
     let el = $('#equationHistoryOut');
     el.empty();
     for(let i = 0; i < response.length; i++) {
-      el.append(`<li>${response[i].firstNum} ${response[i].operator} ${response[i].lastNum}</li>`);
+      el.append(`<li>${response[i].firstNum} ${response[i].operator} ${response[i].lastNum} = ${response[i].finalAnswer}</li>`);
     }
   }).catch(function(err){
     console.log(err);
@@ -52,7 +51,6 @@ function equals() { // When the submit (`=` button) is clicked, capture this inp
     operator: chosenOperator,
     lastNum: $('#secondNumIn').val()
   }
-  //dataTypeTest.push(newEquation); // for TESTING the data type of the object
   console.log('adding:', newEquation);
   // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
   $.ajax({
@@ -77,13 +75,3 @@ function operatorChoose() { // updates the chosenOperator for the current equati
   chosenOperator = $(this).text();
   //console.log(chosenOperator);
 }
-
-// function dataType() {
-//   for(let i = 0; i < dataTypeTest.length; i++) {
-//     let firstNumber = +dataTypeTest[i].firstNum;
-//     let secondNumber = +dataTypeTest[i].lastNum;
-//     console.log(firstNumber, secondNumber);
-//     let operatorType = dataTypeTest[i].operator;
-//     console.log(firstNumber, operatorType, secondNumber); // returns the operator as string = boo!!
-//   };
-// }

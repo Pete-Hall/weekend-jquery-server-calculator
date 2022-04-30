@@ -24,8 +24,9 @@ Tasks
 - Add new equation functionality: (can we input some values, send it to the server, and display it on the DOM? don't worry abot math logic yet):
 - [x] send input values to server (index.html --> client.js --> server.js --> math.js), pushing new equation object to the equations array using a POST
 - [x] send equations from server to display on the DOM using a GET request
-- [ ] set up math logic on server side
-- [ ] display the answer on the DOM (span for answer in equations history?)
+- [x] set up math logic on server side
+- [x] display the answer on the DOM
+- [ ] update the equation history to include the answer to said equation
 - [ ] set up C button functionality
 - [ ] review ALL required baseline functionality on INSTRUCTIONS
 
