@@ -6,6 +6,11 @@ function onReady() {
   $('#equalsButton').on('click', equals);
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
   $('#clearButton').on('click', clear);
+  
+  // STRETCH GOALS
+  $('#optionsIn').on('click', '.optionButtonsIn', optionButtons);
+  $('#clearButton2').on('click', clear2);
+  $('#equalsButton2').on('click', equals2);
 }
 
 function clear() { // Clears the user inputs (including the operator)
@@ -13,6 +18,11 @@ function clear() { // Clears the user inputs (including the operator)
   $('#firstNumIn').val('');
   $('#secondNumIn').val('');
   chosenOperator = null;
+}
+
+function clear2() {
+  console.log('in clear2');
+  $('#numbersIn').val('');
 }
 
 function equals() { // When the submit (`=` button) is clicked, capture the input (values and operator), bundle it up in an object, and send this object to the server via a POST. Updates the DOM
@@ -39,6 +49,10 @@ function equals() { // When the submit (`=` button) is clicked, capture the inpu
     console.log(err);
     alert('error adding equation');
   })
+}
+
+function equals2() {
+  console.log('in equals2');
 }
 
 function getAnswer() { // creates a GET request in order to display the most recent answer on the DOM
@@ -82,4 +96,11 @@ function operatorChoose() { // updates the chosenOperator for the current equati
   console.log($(this).text()); // get the text content of the button element. https://api.jquery.com/val/ and https://api.jquery.com/text/
   chosenOperator = $(this).text();
   //console.log(chosenOperator);
+}
+
+function optionButtons() {
+  console.log('in optionButtons');
+  let buttonValue = $(this).val();
+  console.log(buttonValue);
+  $('#numbersIn').val($('#numbersIn').val() + buttonValue); // hey JQ, target the numbersIn input field and set the value to the current contents of the input field & the value of the specific button clicked. https://stackoverflow.com/questions/4146502/jquery-selectors-on-custom-data-attributes-using-html5 and http://jsfiddle.net/mE6CX/ 
 }

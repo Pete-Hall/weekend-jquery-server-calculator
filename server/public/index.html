@@ -9,15 +9,15 @@
   <title>JQuery Server Calculator</title>
 </head>
 <body>
-  <h1>Server Side Calculator</h1>
+  <h1>Server Side Calculator - Required Features</h1>
   <div id="inputDiv">
     <input id="firstNumIn" type="number" placeholder="first number">
-      <div id="operatorsIn">
-        <button class="operatorChooseButton" id="addButton">+</button>
-        <button class="operatorChooseButton" id="subtractButton">-</button>
-        <button class="operatorChooseButton" id="multiplyButton">*</button>
-        <button class="operatorChooseButton" id="divideButton">/</button>
-      </div>
+    <div id="operatorsIn">
+      <button class="operatorChooseButton" id="addButton">+</button>
+      <button class="operatorChooseButton" id="subtractButton">-</button>
+      <button class="operatorChooseButton" id="multiplyButton">*</button>
+      <button class="operatorChooseButton" id="divideButton">/</button>
+    </div>
     <input id="secondNumIn" type="number" placeholder="second number">
     <button id="equalsButton">=</button>
     <button id="clearButton">C</button>
@@ -25,6 +25,31 @@
   <div id="outputDiv">
     <h2 id="answerOut"></h2>
     <ul id="equationHistoryOut"></ul>
+  </div> 
+  <h1>Server Side Calculator 2 - Stretch Goals</h1>
+  <input readonly id="numbersIn" type="text" placeholder="numbers">
+  <button id="clearButton2">C</button>
+  <div id="optionsIn">
+    <button class="optionButtonsIn" value="7">7</button>
+    <button class="optionButtonsIn" value="8">8</button>
+    <button class="optionButtonsIn" value="9">9</button>
+    <button class="optionButtonsIn" value="+">+</button>
+    <br>
+    <button class="optionButtonsIn" value="4">4</button>
+    <button class="optionButtonsIn" value="5">5</button>
+    <button class="optionButtonsIn" value="6">6</button>
+    <button class="optionButtonsIn" value="-">-</button>
+    <br>
+    <button class="optionButtonsIn" value="1">1</button>
+    <button class="optionButtonsIn" value="2">2</button>
+    <button class="optionButtonsIn" value="3">3</button>
+    <button class="optionButtonsIn" value="*">*</button>
+    <br>
+    <button class="optionButtonsIn" value="0">0</button>
+    <button class="optionButtonsIn" value=".">.</button>
+    <button id="equalsButton2">=</button>
+    <button class="optionButtonsIn" value="/">/</button>
   </div>
+  
 </body>
 </html>
