@@ -10,9 +10,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 ## TODO
 
-Tasks
+Required Features Tasks
 ---
-
 - [x] npm init --y
 - [x] npm install express
 - [x] set up folders and files: server, public, modules (math folder, math.js like pets module in ajaxIntro) etc
@@ -21,7 +20,6 @@ Tasks
 - [x] create static html home page on server
 - [x] create interface on html
 - [x] create router on math.js
-- Add new equation functionality: (can we input some values, send it to the server, and display it on the DOM? don't worry abot math logic yet):
 - [x] send input values to server (index.html --> client.js --> server.js --> math.js), pushing new equation object to the equations array using a POST
 - [x] send equations from server to display on the DOM using a GET request
 - [x] set up math logic on server side
@@ -30,8 +28,9 @@ Tasks
 - [ ] set up C button functionality
 - [ ] review ALL required baseline functionality on INSTRUCTIONS
 - [ ] can I refactor so the /answer GET request is fulfilled in the /math GET request? (would need to update client.js for the appending).
-
-- [ ] set up JQ/client.js click handlers 
-- [ ] create functions with GET/POST + appending things to the DOM (each operator sends to a different route?)
 - [ ] if feeling spicy, have each operator be it's own route?
+
+Stretch Goals Tasks
+---
+- [ ] look at Stretch goals
 
