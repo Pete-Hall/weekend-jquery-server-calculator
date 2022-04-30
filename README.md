@@ -25,7 +25,7 @@ Required Features Tasks
 - [x] set up math logic on server side
 - [x] display the answer on the DOM
 - [x] update the equation history to include the answer to said equation
-- [ ] set up C button functionality
+- [x] set up C button functionality
 - [ ] review ALL required baseline functionality on INSTRUCTIONS
 - [ ] can I refactor so the /answer GET request is fulfilled in the /math GET request? (would need to update client.js for the appending).
 - [ ] if feeling spicy, have each operator be it's own route?

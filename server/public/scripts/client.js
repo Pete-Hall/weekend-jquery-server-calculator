@@ -1,10 +1,44 @@
 $(document).ready(onReady);
 
-let chosenOperator = 0;
+let chosenOperator = null;
 
 function onReady() {
   $('#equalsButton').on('click', equals);
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
+  $('#clearButton').on('click', clear);
+}
+
+function clear() { // Clears the user inputs (including the operator)
+  console.log('in clear');
+  $('#firstNumIn').val('');
+  $('#secondNumIn').val('');
+  chosenOperator = null;
+}
+
+function equals() { // When the submit (`=` button) is clicked, capture the input (values and operator), bundle it up in an object, and send this object to the server via a POST. Updates the DOM
+  console.log('in equals');
+  // get user input & place in an object
+  let newEquation = {
+    firstNum: $('#firstNumIn').val(),
+    operator: chosenOperator,
+    lastNum: $('#secondNumIn').val()
+  }
+  console.log('adding:', newEquation);
+  // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
+  $.ajax({
+    method: 'POST',
+    url: '/math', // not sure if this is right or if it needs to be '/'
+    data: newEquation
+  }).then(function(response){
+    console.log('back from POST', response);
+    // update equation history on DOM
+    getEquations();
+    // upadate current answer on DOM
+    getAnswer();
+  }).catch(function(err){
+    console.log(err);
+    alert('error adding equation');
+  })
 }
 
 function getAnswer() { // creates a GET request in order to display the most recent answer on the DOM
@@ -40,32 +74,6 @@ function getEquations() { // creates a GET request in order to display all input
   }).catch(function(err){
     console.log(err);
     alert('error getting equations history');
-  })
-}
-
-function equals() { // When the submit (`=` button) is clicked, capture the input (values and operator), bundle it up in an object, and send this object to the server via a POST. Updates the DOM
-  console.log('in equals');
-  // get user input & place in an object
-  let newEquation = {
-    firstNum: $('#firstNumIn').val(),
-    operator: chosenOperator,
-    lastNum: $('#secondNumIn').val()
-  }
-  console.log('adding:', newEquation);
-  // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
-  $.ajax({
-    method: 'POST',
-    url: '/math', // not sure if this is right or if it needs to be '/'
-    data: newEquation
-  }).then(function(response){
-    console.log('back from POST', response);
-    // update equation history on DOM
-    getEquations();
-    // upadate current answer on DOM
-    getAnswer();
-  }).catch(function(err){
-    console.log(err);
-    alert('error adding equation');
   })
 }
 
