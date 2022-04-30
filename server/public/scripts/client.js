@@ -7,7 +7,7 @@ function onReady() {
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
 }
 
-function getAnswer() {
+function getAnswer() { // creates a GET request in order to display the most recent answer on the DOM
   console.log('in getAnswer');
   // use AJAX to make a GET request to retrieve the answer from the most recent inputted equation and display on the DOM
   $.ajax({
@@ -24,7 +24,7 @@ function getAnswer() {
   })
 }
 
-function getEquations() { // creates a GET request in order to display all inputted equations onto the DOM
+function getEquations() { // creates a GET request in order to display all inputted equations onto the DOM including that equation's answer
   console.log('in getEquations');
   // use AJAX to make a GET request to retrieve the equations array in math.js and display it on the DOM
   $.ajax({
@@ -43,7 +43,7 @@ function getEquations() { // creates a GET request in order to display all input
   })
 }
 
-function equals() { // When the submit (`=` button) is clicked, capture this input (values and operator), bundle it up in an object, and send this object to the server via a POST.
+function equals() { // When the submit (`=` button) is clicked, capture the input (values and operator), bundle it up in an object, and send this object to the server via a POST. Updates the DOM
   console.log('in equals');
   // get user input & place in an object
   let newEquation = {
@@ -69,7 +69,7 @@ function equals() { // When the submit (`=` button) is clicked, capture this inp
   })
 }
 
-function operatorChoose() { // updates the chosenOperator for the current equation
+function operatorChoose() { // updates the chosenOperator for the current equation (where it will be used in equals() in the POST data object)
   console.log('in operatorChoose');
   console.log($(this).text()); // get the text content of the button element. https://api.jquery.com/val/ and https://api.jquery.com/text/
   chosenOperator = $(this).text();

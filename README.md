@@ -26,9 +26,10 @@ Tasks
 - [x] send equations from server to display on the DOM using a GET request
 - [x] set up math logic on server side
 - [x] display the answer on the DOM
-- [ ] update the equation history to include the answer to said equation
+- [x] update the equation history to include the answer to said equation
 - [ ] set up C button functionality
 - [ ] review ALL required baseline functionality on INSTRUCTIONS
+- [ ] can I refactor so the /answer GET request is fulfilled in the /math GET request? (would need to update client.js for the appending).
 
 - [ ] set up JQ/client.js click handlers 
 - [ ] create functions with GET/POST + appending things to the DOM (each operator sends to a different route?)
