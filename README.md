@@ -23,11 +23,11 @@ Required Features Tasks
 - [x] send input values to server (index.html --> client.js --> server.js --> math.js), pushing new equation object to the equations array using a POST
 - [x] send equations from server to display on the DOM using a GET request
 - [x] set up math logic on server side
-- [x] display the answer on the DOM
+- [x] display the current answer on the DOM
 - [x] update the equation history to include the answer to said equation
 - [x] set up C button functionality
-- [ ] review ALL required baseline functionality on INSTRUCTIONS
-- [ ] can I refactor so the /answer GET request is fulfilled in the /math GET request? (would need to update client.js for the appending).
+- [x] review ALL required baseline functionality on INSTRUCTIONS
+
 - [ ] if feeling spicy, have each operator be it's own route?
 
 Stretch Goals Tasks
