@@ -64,6 +64,7 @@ function equals2() {
   }).then(function(response){
     console.log('back from POST', response);
     // update equation history on DOM
+    getEquations2();
     //update current answer on DOM
   }).catch(function(err){
     console.log(err);
@@ -104,6 +105,24 @@ function getEquations() { // creates a GET request in order to display all input
   }).catch(function(err){
     console.log(err);
     alert('error getting equations history');
+  })
+}
+
+function getEquations2() {
+  console.log('in getEquations2');
+  $.ajax({
+    method: 'GET',
+    url: '/math2'
+  }).then(function(response){
+    console.log(response);
+    let el = $('#equationHistoryOut2');
+    el.empty();
+    for(let i = 0; i < response.length; i++) {
+      el.append(`<li>${response[i].inputItems}`);
+    };
+  }).catch(function(err){
+    console.log(err);
+    alert('error getting equations history 2');
   })
 }
 

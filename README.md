@@ -34,6 +34,8 @@ Stretch Goals Tasks
 ---
 - Create a new calculator to match the one for Stretch goals and have it function (somewhat) normally
 - [x] create interface on index.html
-- [ ] create equal sign functionality to send equation object to the server
+- [x] create equal sign functionality to send equation object to the server
+- [x] create GET request to send the equations2 array
+- [ ] send the equations from server to the DOM
  
 
