@@ -6,7 +6,7 @@ function onReady() {
   $('#equalsButton').on('click', equals);
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
   $('#clearButton').on('click', clear);
-  
+
   // STRETCH GOALS
   $('#optionsIn').on('click', '.optionButtonsIn', optionButtons);
   $('#clearButton2').on('click', clear2);
@@ -32,12 +32,12 @@ function equals() { // When the submit (`=` button) is clicked, capture the inpu
     firstNum: $('#firstNumIn').val(),
     operator: chosenOperator,
     lastNum: $('#secondNumIn').val()
-  }
+  };
   console.log('adding:', newEquation);
   // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
   $.ajax({
     method: 'POST',
-    url: '/math', // not sure if this is right or if it needs to be '/'
+    url: '/math', 
     data: newEquation
   }).then(function(response){
     console.log('back from POST', response);
@@ -53,6 +53,22 @@ function equals() { // When the submit (`=` button) is clicked, capture the inpu
 
 function equals2() {
   console.log('in equals2');
+  let newEquation2 = {
+    inputItems: $('#numbersIn').val()
+  };
+  console.log('adding:', newEquation2);
+  $.ajax({
+    method: 'POST',
+    url: '/math2', // TODO: create this route and file when necessary
+    data: newEquation2
+  }).then(function(response){
+    console.log('back from POST', response);
+    // update equation history on DOM
+    //update current answer on DOM
+  }).catch(function(err){
+    console.log(err);
+    alert('error adding equation from STRETCH calculator');
+  })
 }
 
 function getAnswer() { // creates a GET request in order to display the most recent answer on the DOM

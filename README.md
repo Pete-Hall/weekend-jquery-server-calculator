@@ -32,7 +32,8 @@ Required Features Tasks
 
 Stretch Goals Tasks
 ---
-- convert the interface to look and behave like a calculator as shown in the gif:
-- [ ] create interface on index.html
+- Create a new calculator to match the one for Stretch goals and have it function (somewhat) normally
+- [x] create interface on index.html
+- [ ] create equal sign functionality to send equation object to the server
  
 
