@@ -30,12 +30,12 @@ Required Features Tasks
 
 Stretch Goals Tasks
 ---
-- Create a new calculator to match the one for Stretch goals and have it function (somewhat) normally
-- [x] create interface on index.html
-- [x] create equal sign functionality to send equation object to the server
-- [x] create GET request to send the equations2 array
-- [x] send the equations from server to the DOM
-- [x] create math logic on server side - works with 2 numbers (n + x works but n + x * y does not)
+- [x] ceate a new calculator to match the one for Stretch goals and have it function (somewhat) normally
+  - [x] create interface on index.html
+  - [x] create equal sign functionality to send equation object to the server
+  - [x] create GET request to send the equations2 array
+  - [x] send the equations from server to the DOM
+  - [x] create math logic on server side - works with 2 numbers (n + x works but n + x * y does not). This is fine for now.
 - [ ] only allow the POST call to happen if all necessary input is ready
   - [x] add to baseline calculator
   - [ ] add to stretch interface (this is gonna be interesting/messy)
@@ -43,6 +43,9 @@ Stretch Goals Tasks
   - [x] add to baseline calculator
   - [ ] add to stretch interface
 - [ ] allow a user to click on an entry in the History list to re-run that calculation. This should display the answer on the calculator interface like a normal calculation.
+  - [x] add to baseline calculator
+  - [ ] add to stretch interface
+- [ ] add animation to button clicks
   - [ ] add to baseline calculator
   - [ ] add to stretch interface
 

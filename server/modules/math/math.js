@@ -50,6 +50,11 @@ router.get('/answer', (req, res)=>{ // sends the current answer to the DOM
   res.send(answer);
 })
 
+router.get('/rerun', (req, res)=>{
+  console.log('/rerun GET');
+  res.send(equations);
+})
+
 router.post('/', (req, res)=>{ // adds a new equation to the equations array (see example object above)
   console.log('/math POST:', req.body);
   equations.push(req.body);

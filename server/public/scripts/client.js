@@ -7,6 +7,7 @@ function onReady() {
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
   $('#clearButton').on('click', clear);
   $('#deleteHistoryButton').on('click', deleteHistory); // STRETCH goal
+  $('#equationHistoryOut').on('click', '.rerunEquation', rerunEquation); // STRETCH goal
 
   // STRETCH INTERFACE
   $('#optionsIn').on('click', '.optionButtonsIn', optionButtons);
@@ -19,6 +20,7 @@ function clear() { // Clears the user inputs (including the operator)
   $('#firstNumIn').val('');
   $('#secondNumIn').val('');
   chosenOperator = '';
+  $('#answerOut').empty();
 }
 
 function clear2() {
@@ -120,7 +122,7 @@ function getEquations() { // creates a GET request in order to display all input
     let el = $('#equationHistoryOut');
     el.empty();
     for(let i = 0; i < response.length; i++) {
-      el.append(`<li>${response[i].firstNum} ${response[i].operator} ${response[i].lastNum} = ${response[i].finalAnswer}</li>`);
+      el.append(`<li class="rerunEquation" data-index="${i}">${response[i].firstNum} ${response[i].operator} ${response[i].lastNum} = ${response[i].finalAnswer}</li>`);
     }
   }).catch(function(err){
     console.log(err);
@@ -161,4 +163,32 @@ function optionButtons() {
   let buttonValue = $(this).val();
   console.log(buttonValue);
   $('#numbersIn').val($('#numbersIn').val() + buttonValue); // hey JQ, target the numbersIn input field and set the value to the current contents of the input field & the value of the specific button clicked. https://stackoverflow.com/questions/4146502/jquery-selectors-on-custom-data-attributes-using-html5 and http://jsfiddle.net/mE6CX/ 
+}
+
+function rerunEquation() {
+  console.log('in rerunEquation');
+  console.log($(this).text());
+  // need data index to target the specific response[n] object
+  console.log($(this).data('index')); // returns the index of the clicked on element
+  let target = $(this).data('index');
+  $.ajax({
+    method: 'GET',
+    url: '/math/rerun'
+  }).then(function(response){
+    console.log(response);
+    let elFirst = $('#firstNumIn');
+    let elSecond = $('#secondNumIn');
+    let elAnswer = $('#answerOut')
+    elFirst.val('');
+    elSecond.val('');
+    elAnswer.empty();
+    // console.log(response[target].firstNum);
+    elFirst.val(response[target].firstNum);
+    elSecond.val(response[target].lastNum);
+    elAnswer.append(response[target].finalAnswer);
+    chosenOperator = response[target].operator;
+  }).catch(function(err){
+    console.log(err);
+    alert('problem rerunning an equation');
+  })
 }
