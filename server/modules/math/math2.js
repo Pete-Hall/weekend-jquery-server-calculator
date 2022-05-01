@@ -46,7 +46,7 @@ router.get('/', (req, res)=>{
   }
 
   ///// TRYING TO DO LOGIC WITHOUT REGEX OR MATHJS LIBRARY = HARD. /////
-  //// i think if the inputted user equation wasn't an input field but just a normal text line, I could use span's to break up the order of operations better but the example looks like a user input field. Also not sure how it would work sending a POST without getting the user input .val(), maybe .text() would work instead ////
+  //// i think if the inputted user equation wasn't an input field but just a normal text line, I could use span's to break up the order of operations better but the example looks like a user input field. Also not sure how it would work sending a POST without getting the user input .val(), maybe .text() would work instead. keep splitting up strings by operators to get multi digit numbers and then create expression tree/post,infix? https://www.parsonsmatt.org/2014/07/07/postfixjs.html#:~:text=Postfix%20arithmetic%20means%20that%20the,with%20its%20equivalent%205%203%20%2B%20. ////
 
   // let formula = [];
   // let operators = ['+', '-', '*', '/'];

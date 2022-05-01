@@ -6,8 +6,9 @@ function onReady() {
   $('#equalsButton').on('click', equals);
   $('#operatorsIn').on('click', '.operatorChooseButton', operatorChoose);
   $('#clearButton').on('click', clear);
+  $('#deleteHistoryButton').on('click', deleteHistory); // STRETCH goal
 
-  // STRETCH GOALS
+  // STRETCH INTERFACE
   $('#optionsIn').on('click', '.optionButtonsIn', optionButtons);
   $('#clearButton2').on('click', clear2);
   $('#equalsButton2').on('click', equals2);
@@ -23,6 +24,21 @@ function clear() { // Clears the user inputs (including the operator)
 function clear2() {
   console.log('in clear2');
   $('#numbersIn').val('');
+}
+
+function deleteHistory() { // Goes to the server and deletes the equation history and the most recent answer. https://dirask.com/posts/Node-js-Express-js-AJAX-DELETE-request-1XobEj
+  console.log('in deleteHistory');
+  $.ajax({
+    method: 'DELETE',
+    url: '/math'
+  }).then(function(response){
+    console.log(response);
+    getEquations();
+    getAnswer();
+  }).catch(function(err){
+    console.log(err);
+    alert('error deleting history')
+  })
 }
 
 function equals() { // When the submit (`=` button) is clicked, capture the input (values and operator), bundle it up in an object, and send this object to the server via a POST. Updates the DOM
@@ -68,9 +84,8 @@ function equals2() {
     data: newEquation2
   }).then(function(response){
     console.log('back from POST', response);
-    // update equation history on DOM
+    // update equation history and current answer on DOM
     getEquations2();
-    //update current answer on DOM
   }).catch(function(err){
     console.log(err);
     alert('error adding equation from STRETCH calculator');

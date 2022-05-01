@@ -28,8 +28,6 @@ Required Features Tasks
 - [x] set up C button functionality
 - [x] review ALL required baseline functionality on INSTRUCTIONS
 
-- [ ] if feeling spicy, have each operator be it's own route?
-
 Stretch Goals Tasks
 ---
 - Create a new calculator to match the one for Stretch goals and have it function (somewhat) normally
@@ -40,9 +38,17 @@ Stretch Goals Tasks
 - [x] create math logic on server side - works with 2 numbers (n + x works but n + x * y does not)
 - [ ] only allow the POST call to happen if all necessary input is ready
   - [x] add to baseline calculator
+  - [ ] add to stretch interface (this is gonna be interesting/messy)
+- [ ] allow a user to clear the history by clicking on a button. Technically this shouldn't be a GET or a POST. Look into making a DELETE request! (DELETE deletes info already on the server)
+  - [x] add to baseline calculator
+  - [ ] add to stretch interface
+- [ ] allow a user to click on an entry in the History list to re-run that calculation. This should display the answer on the calculator interface like a normal calculation.
+  - [ ] add to baseline calculator
   - [ ] add to stretch interface
 
 
+
+Maybe's:
 - [ ] install mathjs library and use functionality to see how it works with the STRETCH interface?
 - [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...this is hard af. What's protocol on using libraries like mathjs in the real world
  

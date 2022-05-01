@@ -56,5 +56,12 @@ router.post('/', (req, res)=>{ // adds a new equation to the equations array (se
   res.sendStatus(200) // once the calculation is complete, send back the OK
 })
 
+router.delete('/', (req, res)=>{ // deletes all values in the equations array and resets the answer to null
+  console.log('/math DELETE');
+  equations = [];
+  answer = null;
+  res.send('equation history removed');
+})
+
 // exports
 module.exports = router;
