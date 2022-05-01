@@ -22,10 +22,26 @@ router.get('/', (req, res)=>{
     //split up string into a usable equation
     // split up numbers before and after an operator ('123+456' = 123 + 456)
     answer = equations2[i].inputItems;
-    let splitUp = answer.split('+');
-    //equations2[i].finalAnswer2 = splitUp; // creates the key of finalAnswer2 as an array of the split up string (ex. "3+2" --> [3,2]). .length gives us the length of the array
-    answer = (+splitUp[0]) + (+splitUp[1]);
-    equations2[i].finalAnswer2 = answer;
+    if(answer.includes('+')) {
+      let splitUp = answer.split('+');
+      //equations2[i].finalAnswer2 = splitUp; // creates the key of finalAnswer2 as an array of the split up string (ex. "3+2" --> [3,2]). .length gives us the length of the array
+      answer = (+splitUp[0]) + (+splitUp[1]); // if enter "6+-6" in interface, [1] is '-6' and the answer is 0...interesting
+      equations2[i].finalAnswer2 = answer;
+    } else if(answer.includes('-')) {
+      let splitUp = answer.split('-');
+      answer = (+splitUp[0]) - (+splitUp[1]);
+      equations2[i].finalAnswer2 = answer;
+    } else if(answer.includes('*')) {
+      let splitUp = answer.split('*');
+      answer = (+splitUp[0]) * (+splitUp[1]);
+      equations2[i].finalAnswer2 = answer;
+    } else if(answer.includes('/')) {
+      let splitUp = answer.split('/');
+      answer = (+splitUp[0]) / (+splitUp[1]);
+      equations2[i].finalAnswer2 = answer;
+    } else {
+      answer = 'math went wrong';
+    }
   }
   res.send(equations2);
 })
