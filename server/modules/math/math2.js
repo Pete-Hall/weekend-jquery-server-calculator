@@ -45,6 +45,7 @@ router.get('/', (req, res)=>{
     }
   }
 
+  ///// TRYING TO DO LOGIC WITHOUT REGEX OR MATHJS LIBRARY /////
   // let formula = [];
   // let operators = ['+', '-', '*', '/'];
   // for(let i=0; i<equations2.length; i++) {

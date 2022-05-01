@@ -38,8 +38,10 @@ Stretch Goals Tasks
 - [x] create GET request to send the equations2 array
 - [x] send the equations from server to the DOM
 - [x] create math logic on server side - works with 2 numbers
+- [ ] add mathjs library functionality to see how it works
+- [ ] work on other STRETCH functionality
 
 
-- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...
+- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...this is hard af. What's protocol on using libraries like mathjs in the real world
  
 
