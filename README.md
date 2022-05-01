@@ -37,6 +37,9 @@ Stretch Goals Tasks
 - [x] create equal sign functionality to send equation object to the server
 - [x] create GET request to send the equations2 array
 - [x] send the equations from server to the DOM
-- [ ] create match logic on server side
+- [x] create math logic on server side - works with 2 numbers
+
+
+- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...
  
 

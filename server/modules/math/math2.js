@@ -18,6 +18,7 @@ router.post('/', (req, res)=>{
 
 router.get('/', (req, res)=>{
   console.log('/math2 GET');
+
   for(let i = 0; i < equations2.length; i++) {
     //split up string into a usable equation
     // split up numbers before and after an operator ('123+456' = 123 + 456)
@@ -43,6 +44,22 @@ router.get('/', (req, res)=>{
       answer = 'math went wrong';
     }
   }
+
+  // let formula = [];
+  // let operators = ['+', '-', '*', '/'];
+  // for(let i=0; i<equations2.length; i++) {
+  //   let inputs = equations2[i].inputItems;
+  //   formula = [];
+  //   for(let j=0; j<inputs.length; j++) {
+  //     for(let k=0; k<operators.length; k++) {
+  //       if(inputs[j]===(operators[k])) {
+  //         formula.push([j]); // returns an array of the indexes of all the operators in the equation
+  //         equations2[i].finalAnswer2 = formula;
+  //       }
+  //     }
+  //   }
+  // }
+
   res.send(equations2);
 })
 

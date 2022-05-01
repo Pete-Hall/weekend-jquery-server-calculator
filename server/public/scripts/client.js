@@ -117,8 +117,11 @@ function getEquations2() {
     console.log(response);
     let el = $('#equationHistoryOut2');
     el.empty();
+    let answerEl = $('#answerOut2');
+    answerEl.empty();
+    answerEl.append(response[response.length-1].finalAnswer2);
     for(let i = 0; i < response.length; i++) {
-      el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`);
+      el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`); // remove finalAnswer2 for correct interface but I like this better
     };
   }).catch(function(err){
     console.log(err);
