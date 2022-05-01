@@ -21,6 +21,7 @@ function clear() { // Clears the user inputs (including the operator)
   $('#secondNumIn').val('');
   chosenOperator = '';
   $('#answerOut').empty();
+  $('.operatorChooseButton').css('background-color', '');
 }
 
 function clear2() {
@@ -155,6 +156,9 @@ function operatorChoose() { // updates the chosenOperator for the current equati
   console.log('in operatorChoose');
   console.log($(this).text()); // get the text content of the button element. https://api.jquery.com/val/ and https://api.jquery.com/text/
   chosenOperator = $(this).text();
+  $('.operatorChooseButton').css('background-color', '');
+  $(this).css('background-color', 'lightgreen');
+  
   //console.log(chosenOperator);
 }
 
@@ -187,6 +191,16 @@ function rerunEquation() {
     elSecond.val(response[target].lastNum);
     elAnswer.append(response[target].finalAnswer);
     chosenOperator = response[target].operator;
+    $('.operatorChooseButton').css('background-color', '');
+    if(chosenOperator === '+') {
+      $('#addButton').css('background-color', 'lightgreen');
+    } else if(chosenOperator === '-') {
+      $('#subtractButton').css('background-color', 'lightgreen');
+    } else if(chosenOperator === '*') {
+      $('#multiplyButton').css('background-color', 'lightgreen');
+    } else if(chosenOperator === '/') {
+      $('#divideButton').css('background-color', 'lightgreen')
+    };
   }).catch(function(err){
     console.log(err);
     alert('problem rerunning an equation');

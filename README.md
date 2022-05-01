@@ -45,7 +45,7 @@ Stretch Goals Tasks
 - [ ] allow a user to click on an entry in the History list to re-run that calculation. This should display the answer on the calculator interface like a normal calculation.
   - [x] add to baseline calculator
   - [ ] add to stretch interface
-- [ ] add animation to button clicks
+- [ ] add animation/style to button clicks
   - [ ] add to baseline calculator
   - [ ] add to stretch interface
 
@@ -53,6 +53,6 @@ Stretch Goals Tasks
 
 Maybe's:
 - [ ] install mathjs library and use functionality to see how it works with the STRETCH interface?
-- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...this is hard af. What's protocol on using libraries like mathjs in the real world
+- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...this is hard. look at replacing input field with <p> tag and using <span>'s to break the equation up into components to use in a conditional statement?
  
 

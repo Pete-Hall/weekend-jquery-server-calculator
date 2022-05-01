@@ -1,0 +1,10 @@
+.operatorChooseButton:hover {
+  transform: translate(-1px, 1px);
+  background-color: yellow;
+}
+
+/* .operatorChooseButton:focus { /* https://stackoverflow.com/questions/42134731/css-change-button-style-after-click 
+  transform: translate(1px, 1px);/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3 
+  background-color: lightgreen; 
+} */
+
