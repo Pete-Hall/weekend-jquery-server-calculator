@@ -36,6 +36,7 @@ Stretch Goals Tasks
 - [x] create interface on index.html
 - [x] create equal sign functionality to send equation object to the server
 - [x] create GET request to send the equations2 array
-- [ ] send the equations from server to the DOM
+- [x] send the equations from server to the DOM
+- [ ] create match logic on server side
  
 

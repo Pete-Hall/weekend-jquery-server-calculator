@@ -118,7 +118,7 @@ function getEquations2() {
     let el = $('#equationHistoryOut2');
     el.empty();
     for(let i = 0; i < response.length; i++) {
-      el.append(`<li>${response[i].inputItems}`);
+      el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`);
     };
   }).catch(function(err){
     console.log(err);
