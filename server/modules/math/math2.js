@@ -45,7 +45,9 @@ router.get('/', (req, res)=>{
     }
   }
 
-  ///// TRYING TO DO LOGIC WITHOUT REGEX OR MATHJS LIBRARY /////
+  ///// TRYING TO DO LOGIC WITHOUT REGEX OR MATHJS LIBRARY = HARD. /////
+  //// i think if the inputted user equation wasn't an input field but just a normal text line, I could use span's to break up the order of operations better but the example looks like a user input field. Also not sure how it would work sending a POST without getting the user input .val(), maybe .text() would work instead ////
+
   // let formula = [];
   // let operators = ['+', '-', '*', '/'];
   // for(let i=0; i<equations2.length; i++) {

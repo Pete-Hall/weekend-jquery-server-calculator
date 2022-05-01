@@ -1,6 +1,6 @@
 $(document).ready(onReady);
 
-let chosenOperator = null;
+let chosenOperator = '';
 
 function onReady() {
   $('#equalsButton').on('click', equals);
@@ -17,7 +17,7 @@ function clear() { // Clears the user inputs (including the operator)
   console.log('in clear');
   $('#firstNumIn').val('');
   $('#secondNumIn').val('');
-  chosenOperator = null;
+  chosenOperator = '';
 }
 
 function clear2() {
@@ -33,7 +33,12 @@ function equals() { // When the submit (`=` button) is clicked, capture the inpu
     operator: chosenOperator,
     lastNum: $('#secondNumIn').val()
   };
-  console.log('adding:', newEquation);
+  if(newEquation.firstNum === '' || newEquation.operator === '' || newEquation.lastNum === '') { // STRETCH goal: adds validation for data integrity
+    alert('Please input a valid equation');
+    return false;
+  } else {
+    console.log('adding:', newEquation);
+  };
   // using AJAX, make a POST request to CREATE a new equation in the equation array (which will need to be setup in the math.js file).
   $.ajax({
     method: 'POST',
