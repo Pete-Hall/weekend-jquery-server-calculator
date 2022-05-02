@@ -4,16 +4,14 @@
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+### Required Features Calculator
 
-Required Features Calculator
----
 This interface functions as a simple calcutor taking two input numbers and one operator. It bundles the user inputs into an object, makes a POST call to send the data to the server, calculates the logic server-side, and makes a GET request to display the correct answer and equation history onto the DOM. 
 
 Added features includes button styling/animation, data validation, ability to delete the equation history making a DELETE request, and the ability to rerun an equation when you click on an equation in the history list on the DOM. 
 
-Stretch Goals Calculator
----
+### Stretch Goals Calculator
+
 This calculator has an updated interface to be more intuitive. Similar to the required features calculator, this interface bundles user input into an object, makes a POST call to send the data to the server, calculates the logic server-side, and makes a GET request to display the correct answer and equation history onto the DOM. This interface only correctly functions when given two numbers to calculate (ex. 1 + 2 = 3, NOT 1 + 2 * 4 = 9).
 
 Added features include button styling/animation.
@@ -22,8 +20,8 @@ Added features include button styling/animation.
 
 ## TODO
 
-Required Features Tasks
----
+### Required Features Tasks
+
 - [x] npm init --y
 - [x] npm install express
 - [x] set up folders and files: server, public, modules (math folder, math.js like pets module in ajaxIntro) etc
@@ -40,8 +38,8 @@ Required Features Tasks
 - [x] set up C button functionality
 - [x] review ALL required baseline functionality on INSTRUCTIONS
 
-Stretch Goals Tasks
----
+### Stretch Goals Tasks
+
 - [x] ceate a new calculator to match the one for Stretch goals and have it function (somewhat) normally
   - [x] create interface on index.html
   - [x] create equal sign functionality to send equation object to the server
@@ -60,7 +58,6 @@ Stretch Goals Tasks
 - [x] add animation/style to button clicks
   - [x] add to baseline calculator
   - [x] add to stretch interface
-
 
 
 Maybe's:

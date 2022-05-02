@@ -13,6 +13,7 @@ function onReady() {
   $('#optionsIn').on('click', '.optionButtonsIn', optionButtons);
   $('#clearButton2').on('click', clear2);
   $('#equalsButton2').on('click', equals2);
+  $('#optionsIn').on('click', '.optionButtonsIn', '.operator2', operator2ButtonDisable); // took a wild guess on the double class thing. this helped spark the idea https://stackoverflow.com/questions/5116288/how-to-select-an-element-with-2-classes 
 }
 
 function clear() { // Clears the user inputs (including the operator)
@@ -27,7 +28,12 @@ function clear() { // Clears the user inputs (including the operator)
 function clear2() {
   console.log('in clear2');
   $('#numbersIn').val('');
+  $('#answerOut2').empty();
   $('.optionButtonsIn').css('background-color', '');
+  $('#addOperator').prop('disabled', false);
+  $('#subtractOperator').prop('disabled',false)
+  $('#multiplyOperator').prop('disabled',false);
+  $('#divideOperator').prop('disabled',false);
 }
 
 function deleteHistory() { // Goes to the server and deletes the equation history and the most recent answer. https://dirask.com/posts/Node-js-Express-js-AJAX-DELETE-request-1XobEj
@@ -162,6 +168,17 @@ function operatorChoose() { // updates the chosenOperator for the current equati
   $(this).css('background-color', 'lightgreen');
   
   //console.log(chosenOperator);
+}
+
+function operator2ButtonDisable() { // disables the operator buttons once an operator is chosen to limit the users ability since the calculator can't calculate equations with multiple operators.
+  console.log($(this).val());
+  if($(this).val() === '+' || $(this).val() === '-' || $(this).val() === '*' || $(this).val() === '/') {
+    //$(this).prop('disabled', true); // disables only the button clicked
+    $('#addOperator').prop('disabled', true);
+    $('#subtractOperator').prop('disabled', true);
+    $('#multiplyOperator').prop('disabled', true);
+    $('#divideOperator').prop('disabled', true);
+  }
 }
 
 function optionButtons() {
