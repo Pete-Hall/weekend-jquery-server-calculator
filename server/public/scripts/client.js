@@ -27,6 +27,7 @@ function clear() { // Clears the user inputs (including the operator)
 function clear2() {
   console.log('in clear2');
   $('#numbersIn').val('');
+  $('.optionButtonsIn').css('background-color', '');
 }
 
 function deleteHistory() { // Goes to the server and deletes the equation history and the most recent answer. https://dirask.com/posts/Node-js-Express-js-AJAX-DELETE-request-1XobEj
@@ -167,6 +168,8 @@ function optionButtons() {
   let buttonValue = $(this).val();
   console.log(buttonValue);
   $('#numbersIn').val($('#numbersIn').val() + buttonValue); // hey JQ, target the numbersIn input field and set the value to the current contents of the input field & the value of the specific button clicked. https://stackoverflow.com/questions/4146502/jquery-selectors-on-custom-data-attributes-using-html5 and http://jsfiddle.net/mE6CX/ 
+  $('.optionButtonsIn').css('background-color', '');
+  $(this).css('background-color', 'lightgreen');
 }
 
 function rerunEquation() {

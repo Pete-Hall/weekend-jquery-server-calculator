@@ -45,9 +45,9 @@ Stretch Goals Tasks
 - [ ] allow a user to click on an entry in the History list to re-run that calculation. This should display the answer on the calculator interface like a normal calculation.
   - [x] add to baseline calculator
   - [ ] add to stretch interface
-- [ ] add animation/style to button clicks
-  - [ ] add to baseline calculator
-  - [ ] add to stretch interface
+- [x] add animation/style to button clicks
+  - [x] add to baseline calculator
+  - [x] add to stretch interface
 
 
 

@@ -50,6 +50,7 @@ router.get('/answer', (req, res)=>{ // sends the current answer to the DOM
   res.send(answer);
 })
 
+// http://localhost:5001/math/rerun
 router.get('/rerun', (req, res)=>{
   console.log('/rerun GET');
   res.send(equations);
