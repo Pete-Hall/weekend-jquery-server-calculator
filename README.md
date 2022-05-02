@@ -1,12 +1,24 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+[Project Instructions](./INSTRUCTIONS.md)
 
 ## Description
 
 Your project description goes here. What problem did you solve? How did you solve it?
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Required Features Calculator
+---
+This interface functions as a simple calcutor taking two input numbers and one operator. It bundles the user inputs into an object, makes a POST call to send the data to the server, calculates the logic server-side, and makes a GET request to display the correct answer and equation history onto the DOM. 
+
+Added features includes button styling/animation, data validation, ability to delete the equation history making a DELETE request, and the ability to rerun an equation when you click on an equation in the history list on the DOM. 
+
+Stretch Goals Calculator
+---
+This calculator has an updated interface to be more intuitive. Similar to the required features calculator, this interface bundles user input into an object, makes a POST call to send the data to the server, calculates the logic server-side, and makes a GET request to display the correct answer and equation history onto the DOM. This interface only correctly functions when given two numbers to calculate (ex. 1 + 2 = 3, NOT 1 + 2 * 4 = 9).
+
+Added features include button styling/animation.
+
+(Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).)
 
 ## TODO
 
@@ -38,7 +50,7 @@ Stretch Goals Tasks
   - [x] create math logic on server side - works with 2 numbers (n + x works but n + x * y does not). This is fine for now.
 - [ ] only allow the POST call to happen if all necessary input is ready
   - [x] add to baseline calculator
-  - [ ] add to stretch interface (this is gonna be interesting/messy)
+  - [ ] add to stretch interface
 - [ ] allow a user to clear the history by clicking on a button. Technically this shouldn't be a GET or a POST. Look into making a DELETE request! (DELETE deletes info already on the server)
   - [x] add to baseline calculator
   - [ ] add to stretch interface
@@ -53,6 +65,6 @@ Stretch Goals Tasks
 
 Maybe's:
 - [ ] install mathjs library and use functionality to see how it works with the STRETCH interface?
-- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...this is hard. look at replacing input field with <p> tag and using <span>'s to break the equation up into components to use in a conditional statement?
+- [ ] create math logic on server side that works with multiple numbers and order of operations? (ex. 1+2*3) or limit user input so they can only do 2 numbers...this is hard. look at replacing input field with p tag and using span's to break the equation up into components to use in a conditional statement? split, loop, index, calculate, splice, replace?
  
 

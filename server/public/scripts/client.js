@@ -32,6 +32,7 @@ function clear2() {
 
 function deleteHistory() { // Goes to the server and deletes the equation history and the most recent answer. https://dirask.com/posts/Node-js-Express-js-AJAX-DELETE-request-1XobEj
   console.log('in deleteHistory');
+  $('.operatorChooseButton').css('background-color', '');
   $.ajax({
     method: 'DELETE',
     url: '/math'
