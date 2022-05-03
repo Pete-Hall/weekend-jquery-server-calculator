@@ -46,9 +46,10 @@ Added features include button styling/animation.
   - [x] create GET request to send the equations2 array
   - [x] send the equations from server to the DOM
   - [x] create math logic on server side - works with 2 numbers (n + x works but n + x * y does not). This is fine for now.
-- [ ] only allow the POST call to happen if all necessary input is ready
+- [x] only allow the POST call to happen if all necessary input is ready
   - [x] add to baseline calculator
   - [x] add to stretch interface (added operator button limitations to get around this. Any equation without a number replaces the blank number with a 0).
+    [ ] add user limitations to the decimal button.
 - [ ] allow a user to clear the history by clicking on a button. Technically this shouldn't be a GET or a POST. Look into making a DELETE request! (DELETE deletes info already on the server)
   - [x] add to baseline calculator
   - [ ] add to stretch interface
