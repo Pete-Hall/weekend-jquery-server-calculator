@@ -89,6 +89,13 @@ function equals2() {
     inputItems: $('#numbersIn').val()
   };
   console.log('adding:', newEquation2);
+  if(newEquation2.inputItems === '') { 
+    // STRETCH goal: adds validation for data integrity
+    alert('Please input a valid equation');
+    return false;
+  } else {
+    console.log('adding:', newEquation2);
+  };
   $.ajax({
     method: 'POST',
     url: '/math2', // TODO: create this route and file when necessary
@@ -151,8 +158,21 @@ function getEquations2() {
     let answerEl = $('#answerOut2');
     answerEl.empty();
     answerEl.append(response[response.length-1].finalAnswer2);
-    for(let i = 0; i < response.length; i++) {
-      el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`); // remove finalAnswer2 for correct interface but I like this better
+    for(let i = 0; i < response.length; i++) { // long conditional to add "0" to the displayed equation history if the equation has 1 or 0 numbers in it and has an operator (ex. 5*=0 now is displayed as 5*0=0). 
+      if((response[i].inputItems[0] === '+' && response[i].inputItems.length === 1) || (response[i].inputItems[0] === '-' && response[i].inputItems.length === 1) || (response[i].inputItems[0] === '*' && response[i].inputItems.length === 1) || (response[i].inputItems[0] === '/' && response[i].inputItems.length === 1)) {
+        response[i].inputItems = '0' + response[i].inputItems + '0';
+        el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`)
+      }
+      else if(response[i].inputItems[0] === '+' || response[i].inputItems[0] === '-' || response[i].inputItems[0] === '*' || response[i].inputItems[0] === '/') {
+        response[i].inputItems = '0' + response[i].inputItems;
+        el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`);
+      } else if(response[i].inputItems.length >= 2 && (response[i].inputItems[response[i].inputItems.length-1] === '+' || response[i].inputItems[response[i].inputItems.length-1] === '-' || response[i].inputItems[response[i].inputItems.length-1] === '*' || response[i].inputItems[response[i].inputItems.length-1] === '/')) {
+        response[i].inputItems = response[i].inputItems + '0';
+        el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`);
+      }
+      else {
+        el.append(`<li>${response[i].inputItems} = ${response[i].finalAnswer2}`);
+      } // remove finalAnswer2 for correct interface but I like this better
     };
   }).catch(function(err){
     console.log(err);
@@ -171,7 +191,7 @@ function operatorChoose() { // updates the chosenOperator for the current equati
 }
 
 function operator2ButtonDisable() { // disables the operator buttons once an operator is chosen to limit the users ability since the calculator can't calculate equations with multiple operators.
-  console.log($(this).val());
+  //console.log($(this).val());
   if($(this).val() === '+' || $(this).val() === '-' || $(this).val() === '*' || $(this).val() === '/') {
     //$(this).prop('disabled', true); // disables only the button clicked
     $('#addOperator').prop('disabled', true);
