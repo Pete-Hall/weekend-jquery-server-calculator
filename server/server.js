@@ -12,7 +12,7 @@ app.use('/math', math);
 app.use('/math2', math2);
 
 // globals
-const port = 5001;
+const port = process.env.PORT || 5001;
 
 // spin up server
 app.listen(port, ()=>{
